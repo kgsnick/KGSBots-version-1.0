@@ -11,10 +11,8 @@ using System.Linq;
 namespace kgs_bots {
     public partial class Form1 : Form
     {
-        string sIni;
-
         Process P;
-        string sBat, sExe;
+        string sBat, sExe, sIni;
         internal delegate void UpdateRTB(Color SelectionColor, string Text);
 
         DropShadow ds = new DropShadow();
@@ -211,7 +209,6 @@ namespace kgs_bots {
 
             if (rules.Text == "Chinese") sRules = "chinese";
             if (rules.Text == "Japanese") sRules = "japanese";
-
             if (boardsize.Text == "7 x 7") sBoardSize = "7";
             if (boardsize.Text == "9 x 9") sBoardSize = "9";
             if (boardsize.Text == "11 x 11") sBoardSize = "11";
@@ -224,149 +221,48 @@ namespace kgs_bots {
             sBuyomyTime = byuomytime.Text;
             sPeriods = periods.Text;
 
+            string setNOE = "name = " + sNickname + "\r\n" +
+                            "password=" + sPassword + "\r\n" +
+                            "room=" + sRoomC + "\r\n" +
+                            "mode=custom" + "\r\n" +
+                            "reconnect=true" + "\r\n" +
+                            "rules=" + sRules + "\r\n" +
+                            "rules.boardSize=" + sBoardSize + "\r\n" +
+                            "rules.time=" + sMainTime + ":00+" + sPeriods + "x0:" + sBuyomyTime + "\r\n" +
+                            "talk=I'm a computer." + "\r\n" +
+                            "gameNotes=bot :: " + sEngine;
+
             if (textOut.Text == "")
             {
-                if (nickname.Text == "")
-                {
-                    nickname.Focus();
-                    t.Show(MyStrings.EnterNickname, nickname, 1500);
-                }
-                else if (psw.Text == "")
-                {
-                    psw.Focus();
-                    t.Show(MyStrings.EnterPassword, psw, 1500);
-                }
-                else if (room.Text == "")
-                {
-                    room.Focus();
-                    t.Show(MyStrings.EnterRoom, room, 1500);
-                }
-                else if (rules.Text == "")
-                {
-                    rules.Focus();
-                    t.Show(MyStrings.Rules, rules, 1500);
-                }
-                else if (boardsize.Text == "")
-                {
-                    boardsize.Focus();
-                    t.Show(MyStrings.BoardSize, boardsize, 1500);
-                }
-                else if (engine.Text == "")
-                {
-                    engine.Focus();
-                    t.Show(MyStrings.Engine, engine, 1500);
-                }
+                if (nickname.Text == "") { nickname.Focus(); t.Show(MyStrings.EnterNickname, nickname, 1500); }
+                else if (psw.Text == "") { psw.Focus(); t.Show(MyStrings.EnterPassword, psw, 1500); }
+                else if (room.Text == "") { room.Focus(); t.Show(MyStrings.EnterRoom, room, 1500); }
+                else if (rules.Text == "") { rules.Focus(); t.Show(MyStrings.Rules, rules, 1500); }
+                else if (boardsize.Text == "") { boardsize.Focus(); t.Show(MyStrings.BoardSize, boardsize, 1500); }
+                else if (engine.Text == "") { engine.Focus(); t.Show(MyStrings.Engine, engine, 1500); }
+
                 else if (engine.Text == "pachi")
                 {
-                    if (threads.Text == "")
-                    {
-                        threads.Focus();
-                        t.Show(MyStrings.Threads, threads, 1500);
-                    }
-                    else if (maxtreesize.Text == "")
-                    {
-                        maxtreesize.Focus();
-                        t.Show(MyStrings.Memory, maxtreesize, 1500);
-                    }
+                    if (threads.Text == "") { threads.Focus(); t.Show(MyStrings.Threads, threads, 1500); }
+                    else if (maxtreesize.Text == "") { maxtreesize.Focus(); t.Show(MyStrings.Memory, maxtreesize, 1500); }
                     else if ((threads.Text != "") && (maxtreesize.Text != ""))
                     {
-                        //Выводим данные в textOut
-                        textOut.Text += "engine=" + sEngine + ".exe " + sGamesDB + "threads=" + sThreads + ", max_tree_size=" + sMaxTreeSize +
-                            "\r\n" +
-                            "name=" + sNickname +
-                            "\r\n" +
-                            "password=" + sPassword +
-                            "\r\n" +
-                            "room=" + sRoomC +
-                            "\r\n" +
-                            "mode=custom" +
-                            "\r\n" +
-                            "reconnect=true" +
-                            "\r\n" +
-                            "rules=" + sRules +
-                            "\r\n" +
-                            "rules.boardSize=" + sBoardSize +
-                            "\r\n" +
-                            "rules.time=" + sMainTime + ":00+" + sPeriods + "x0:" + sBuyomyTime +
-                            "\r\n" +
-                            "talk=I'm a computer." +
-                            "\r\n" +
-                            "gameNotes=bot :: " + sEngine;
+                        textOut.Text += "engine=" + sEngine + ".exe " + sGamesDB + "threads=" + sThreads + ", max_tree_size=" + sMaxTreeSize + "\r\n" + setNOE;
+                        SaveEngine(textOut.Text);
                     }
                 }
                 else if (engine.Text == "gnugo")
                 {
-                    //Выводим данные в textOut
-                    textOut.Text += "engine=" + sEngine + ".exe" + " --mode gtp --quiet --cache-size 32" +
-                        "\r\n" +
-                        "name=" + sNickname +
-                        "\r\n" +
-                        "password=" + sPassword +
-                        "\r\n" +
-                        "room=" + sRoomC +
-                        "\r\n" +
-                        "mode=custom" +
-                        "\r\n" +
-                        "reconnect=true" +
-                        "\r\n" +
-                        "rules=" + sRules +
-                        "\r\n" +
-                        "rules.boardSize=" + sBoardSize +
-                        "\r\n" +
-                        "rules.time=" + sMainTime + ":00+" + sPeriods + "x0:" + sBuyomyTime +
-                        "\r\n" +
-                        "talk=I'm a computer." +
-                        "\r\n" +
-                        "gameNotes=bot :: " + sEngine;
+                    textOut.Text += "engine=" + sEngine + ".exe" + " --mode gtp --quiet --cache-size 32" + "\r\n" + setNOE;
+                    SaveEngine(textOut.Text);
                 }
                 else if (engine.Text == "fuego")
                 {
-                    //Выводим данные в textOut
-                    textOut.Text += "engine=" + sEngine + ".exe" +
-                        "\r\n" +
-                        "name=" + sNickname +
-                        "\r\n" +
-                        "password=" + sPassword +
-                        "\r\n" +
-                        "room=" + sRoomC +
-                        "\r\n" +
-                        "mode=custom" +
-                        "\r\n" +
-                        "reconnect=true" +
-                        "\r\n" +
-                        "rules=" + sRules +
-                        "\r\n" +
-                        "rules.boardSize=" + sBoardSize +
-                        "\r\n" +
-                        "rules.time=" + sMainTime + ":00+" + sPeriods + "x0:" + sBuyomyTime +
-                        "\r\n" +
-                        "talk=I'm a computer." +
-                        "\r\n" +
-                        "gameNotes=bot :: " + sEngine;
+                    textOut.Text += "engine=" + sEngine + ".exe" + "\r\n" + setNOE;
+                    SaveEngine(textOut.Text);
                 }
-            }            
-
-            if ((sNickname != "") && (sPassword != "") && (sRoom != "") && 
-                (sEngine == "pachi") && (sThreads != "") && (sMaxTreeSize != "") && 
-                (sRules != "") && (sBoardSize != "") && (sMainTime != "") && 
-                (sBuyomyTime != "") && (sPeriods != ""))
-            {
-                SaveEngine(textOut.Text);
             }
 
-            if ((sNickname != "") && (sPassword != "") && (sRoom != "") && 
-                (sEngine == "gnugo") && (sRules != "") && (sBoardSize != "") && 
-                (sMainTime != "") && (sBuyomyTime != "") && (sPeriods != ""))
-            {
-                SaveEngine(textOut.Text);
-            }
-
-            if ((sNickname != "") && (sPassword != "") && (sRoom != "") &&
-                (sEngine == "fuego") && (sRules != "") && (sBoardSize != "") &&
-                (sMainTime != "") && (sBuyomyTime != "") && (sPeriods != ""))
-            {
-                SaveEngine(textOut.Text);
-            }
         }
      
         private void DisabledField()
