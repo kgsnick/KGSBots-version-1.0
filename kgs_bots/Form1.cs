@@ -146,10 +146,7 @@ namespace kgs_bots {
                     if (sEngine == "fuego") sExe = "fuego";
 
                     Process[] ps1 = Process.GetProcessesByName(sExe);
-                    foreach (Process p1 in ps1)
-                    {
-                        p1.Kill();
-                    }
+                    foreach (Process p1 in ps1) { p1.Kill(); }
                 }
                 Close();
             }
@@ -279,19 +276,13 @@ namespace kgs_bots {
 
             for (int i = 0; i < 3; i++)
             {
-                TextBox[] txtBox = new TextBox[]
-                {
-                    nickname, psw, room
-                };
+                TextBox[] txtBox = new TextBox[] { nickname, psw, room };
                 txtBox[i].Enabled = false;
             }
 
             for (int x = 0; x < 3; x++)
             {
-                NumericUpDown[] nudBox = new NumericUpDown[]
-                {
-                    maintime, byuomytime, periods
-                };
+                NumericUpDown[] nudBox = new NumericUpDown[] { maintime, byuomytime, periods };
                 nudBox[x].Enabled = false;
             }
 
@@ -299,10 +290,7 @@ namespace kgs_bots {
             {
                 for (int j = 0; j < 5; j++)
                 {
-                    ComboBox[] cmbBox = new ComboBox[]
-                    {
-                    rules, boardsize, engine, threads, maxtreesize
-                    };
+                    ComboBox[] cmbBox = new ComboBox[] { rules, boardsize, engine, threads, maxtreesize };
                     cmbBox[j].Enabled = false;
                 }
                 checkDB.Enabled = false;
@@ -312,10 +300,7 @@ namespace kgs_bots {
             {
                 for (int j = 0; j < 3; j++)
                 {
-                    ComboBox[] cmbBox = new ComboBox[]
-                    {
-                    rules, boardsize, engine
-                    };
+                    ComboBox[] cmbBox = new ComboBox[] { rules, boardsize, engine };
                     cmbBox[j].Enabled = false;
                 }
             }
@@ -324,10 +309,7 @@ namespace kgs_bots {
             {
                 for (int j = 0; j < 3; j++)
                 {
-                    ComboBox[] cmbBox = new ComboBox[]
-                    {
-                    rules, boardsize, engine
-                    };
+                    ComboBox[] cmbBox = new ComboBox[] { rules, boardsize, engine };
                     cmbBox[j].Enabled = false;
                 }
             }
@@ -411,10 +393,7 @@ namespace kgs_bots {
                     if (sEngine == "fuego") sExe = "fuego";
 
                     Process[] ps1 = Process.GetProcessesByName(sExe);
-                    foreach (Process p1 in ps1)
-                    {
-                        p1.Kill();
-                    }
+                    foreach (Process p1 in ps1) { p1.Kill(); }
                 }
 
                 startBTN.Enabled = true;
@@ -429,17 +408,13 @@ namespace kgs_bots {
 
                 for (int i = 0; i < 3; i++)
                 {
-                    TextBox[] txtBox = new TextBox[] {
-                    nickname, psw, room
-                };
+                    TextBox[] txtBox = new TextBox[] { nickname, psw, room };
                     txtBox[i].Enabled = true;
                 }
 
                 for (int x = 0; x < 3; x++)
                 {
-                    NumericUpDown[] nudBox = new NumericUpDown[] {
-                    maintime, byuomytime, periods
-                };
+                    NumericUpDown[] nudBox = new NumericUpDown[] { maintime, byuomytime, periods };
                     nudBox[x].Enabled = true;
                 }
 
@@ -447,10 +422,7 @@ namespace kgs_bots {
                 {
                     for (int j = 0; j < 5; j++)
                     {
-                        ComboBox[] cmbBox = new ComboBox[]
-                        {
-                    rules, boardsize, engine, threads, maxtreesize
-                        };
+                        ComboBox[] cmbBox = new ComboBox[] { rules, boardsize, engine, threads, maxtreesize };
                         cmbBox[j].Enabled = true;
                     }
                     checkDB.Enabled = true;
@@ -460,10 +432,7 @@ namespace kgs_bots {
                 {
                     for (int j = 0; j < 3; j++)
                     {
-                        ComboBox[] cmbBox = new ComboBox[]
-                        {
-                    rules, boardsize, engine
-                        };
+                        ComboBox[] cmbBox = new ComboBox[] { rules, boardsize, engine };
                         cmbBox[j].Enabled = true;
                     }
                 }
@@ -472,10 +441,7 @@ namespace kgs_bots {
                 {
                     for (int j = 0; j < 3; j++)
                     {
-                        ComboBox[] cmbBox = new ComboBox[]
-                        {
-                    rules, boardsize, engine
-                        };
+                        ComboBox[] cmbBox = new ComboBox[] { rules, boardsize, engine };
                         cmbBox[j].Enabled = true;
                     }
                 }
