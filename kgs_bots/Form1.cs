@@ -139,15 +139,7 @@ namespace kgs_bots {
             Exit f3 = new Exit();
             if (f3.ShowDialog(this) == DialogResult.OK)
             {
-                if (startBTN.Enabled == false)
-                {
-                    if (sEngine == "pachi") sExe = "pachi";
-                    if (sEngine == "gnugo") sExe = "gnugo";
-                    if (sEngine == "fuego") sExe = "fuego";
-
-                    Process[] ps1 = Process.GetProcessesByName(sExe);
-                    foreach (Process p1 in ps1) { p1.Kill(); }
-                }
+                if (startBTN.Enabled == false) StopExe();
                 Close();
             }
             else Opacity = 1.0;
@@ -384,17 +376,7 @@ namespace kgs_bots {
             // Show testDialog as a modal dialog and determine if DialogResult = OK.
             if (f2.ShowDialog(this) == DialogResult.OK)
             {
-                if (startBTN.Enabled == false)
-                {
-                    richTBConsole.Clear();
-
-                    if (sEngine == "pachi") sExe = "pachi";
-                    if (sEngine == "gnugo") sExe = "gnugo";
-                    if (sEngine == "fuego") sExe = "fuego";
-
-                    Process[] ps1 = Process.GetProcessesByName(sExe);
-                    foreach (Process p1 in ps1) { p1.Kill(); }
-                }
+                if (startBTN.Enabled == false) StopExe();
 
                 startBTN.Enabled = true;
                 button2.Enabled = false;
@@ -474,6 +456,18 @@ namespace kgs_bots {
             sr.Close();
 
             return result;
+        }
+
+        public void StopExe()
+        {
+            richTBConsole.Clear();
+
+          //  if (sEngine == "pachi") sExe = "pachi";
+          //  if (sEngine == "gnugo") sExe = "gnugo";
+          //  if (sEngine == "fuego") sExe = "fuego";
+
+            Process[] ps1 = Process.GetProcessesByName(sEngine);
+            foreach (Process p1 in ps1) p1.Kill();
         }
     }
 }
