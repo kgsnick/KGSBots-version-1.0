@@ -26,7 +26,7 @@ namespace kgs_bots {
         public static extern bool ReleaseCapture();
 
         string sNickname, sPassword, sEngine, sGamesDB, sThreads, 
-            sMaxTreeSize, sRules, sBoardSize, sMainTime, sBuyomyTime, sPeriods;
+            sMaxTreeSize, sRules, sBoardSize, sMainTime, sBuyomyTime, sPeriods, sGamesNotes;
 
         bool isChecked = false;
 
@@ -190,8 +190,8 @@ namespace kgs_bots {
 
             sEngine = engine.Text;
 
-            if (checkDB.Text == "off") { sGamesDB = ""; }
-            else if (checkDB.Text == "on") { sGamesDB = "-f book.dat "; }
+            if (checkDB.Text == "Off") { sGamesDB = ""; }
+            else if (checkDB.Text == "On") { sGamesDB = "-f book.dat "; }
 
             sThreads = threads.Text;
             sMaxTreeSize = maxtreesize.Text;
@@ -210,6 +210,9 @@ namespace kgs_bots {
             sBuyomyTime = byuomytime.Text;
             sPeriods = periods.Text;
 
+            var sGamesNotes = gamenotes.Text;
+            var sGamesNotesC = "\\u" + string.Join("\\u", sGamesNotes.Select(c => ((int)c).ToString("x4")));
+
             string setNOE = "name = " + sNickname + "\r\n" +
                             "password=" + sPassword + "\r\n" +
                             "room=" + sRoomC + "\r\n" +
@@ -219,7 +222,7 @@ namespace kgs_bots {
                             "rules.boardSize=" + sBoardSize + "\r\n" +
                             "rules.time=" + sMainTime + ":00+" + sPeriods + "x0:" + sBuyomyTime + "\r\n" +
                             "talk=I'm a computer." + "\r\n" +
-                            "gameNotes=bot :: " + sEngine;
+                            "gameNotes=" + sGamesNotesC;
 
             if (textOut.Text == "")
             {
@@ -370,12 +373,9 @@ namespace kgs_bots {
         {
             Opacity = 0.8;        
 
-            // создаем форму
             StopBot f2 = new StopBot();
 
-            // Show testDialog as a modal dialog and determine if DialogResult = OK.
-            if (f2.ShowDialog(this) == DialogResult.OK)
-            {
+            if (f2.ShowDialog(this) == DialogResult.OK) {
                 if (startBTN.Enabled == false) StopExe();
 
                 startBTN.Enabled = true;
@@ -388,41 +388,33 @@ namespace kgs_bots {
                 SettingsBtn.Enabled = true;
                 label5.Visible = true;
 
-                for (int i = 0; i < 3; i++)
-                {
+                for (int i = 0; i < 3; i++) {
                     TextBox[] txtBox = new TextBox[] { nickname, psw, room };
                     txtBox[i].Enabled = true;
                 }
 
-                for (int x = 0; x < 3; x++)
-                {
+                for (int x = 0; x < 3; x++) {
                     NumericUpDown[] nudBox = new NumericUpDown[] { maintime, byuomytime, periods };
                     nudBox[x].Enabled = true;
                 }
 
-                if (engine.Text == "pachi")
-                {
-                    for (int j = 0; j < 5; j++)
-                    {
+                if (engine.Text == "pachi") {
+                    for (int j = 0; j < 5; j++) {
                         ComboBox[] cmbBox = new ComboBox[] { rules, boardsize, engine, threads, maxtreesize };
                         cmbBox[j].Enabled = true;
                     }
                     checkDB.Enabled = true;
                 }
 
-                if (engine.Text == "gnugo")
-                {
-                    for (int j = 0; j < 3; j++)
-                    {
+                if (engine.Text == "gnugo") {
+                    for (int j = 0; j < 3; j++) {
                         ComboBox[] cmbBox = new ComboBox[] { rules, boardsize, engine };
                         cmbBox[j].Enabled = true;
                     }
                 }
 
-                if (engine.Text == "fuego")
-                {
-                    for (int j = 0; j < 3; j++)
-                    {
+                if (engine.Text == "fuego") {
+                    for (int j = 0; j < 3; j++) {
                         ComboBox[] cmbBox = new ComboBox[] { rules, boardsize, engine };
                         cmbBox[j].Enabled = true;
                     }
@@ -461,10 +453,6 @@ namespace kgs_bots {
         public void StopExe()
         {
             richTBConsole.Clear();
-
-          //  if (sEngine == "pachi") sExe = "pachi";
-          //  if (sEngine == "gnugo") sExe = "gnugo";
-          //  if (sEngine == "fuego") sExe = "fuego";
 
             Process[] ps1 = Process.GetProcessesByName(sEngine);
             foreach (Process p1 in ps1) p1.Kill();

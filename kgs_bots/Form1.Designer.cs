@@ -36,32 +36,37 @@
             this.button2 = new System.Windows.Forms.Button();
             this.startBTN = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.checkDB = new System.Windows.Forms.ComboBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.gamenotes = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.engine = new System.Windows.Forms.ComboBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.checkDB = new System.Windows.Forms.ComboBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
             this.maxtreesize = new System.Windows.Forms.ComboBox();
             this.threads = new System.Windows.Forms.ComboBox();
+            this.label14 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.label10 = new System.Windows.Forms.Label();
             this.periods = new System.Windows.Forms.NumericUpDown();
             this.rules = new System.Windows.Forms.ComboBox();
             this.byuomytime = new System.Windows.Forms.NumericUpDown();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.boardsize = new System.Windows.Forms.ComboBox();
             this.maintime = new System.Windows.Forms.NumericUpDown();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.nickname = new System.Windows.Forms.TextBox();
-            this.psw = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.room = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label4 = new System.Windows.Forms.Label();
+            this.room = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.psw = new System.Windows.Forms.TextBox();
+            this.nickname = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -75,11 +80,14 @@
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.periods)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.byuomytime)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maintime)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.greenPic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.redPic)).BeginInit();
             this.SuspendLayout();
@@ -143,60 +151,42 @@
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(205)))), ((int)(((byte)(0)))));
-            this.groupBox3.Controls.Add(this.checkDB);
-            this.groupBox3.Controls.Add(this.label12);
-            this.groupBox3.Controls.Add(this.label15);
-            this.groupBox3.Controls.Add(this.label13);
-            this.groupBox3.Controls.Add(this.label14);
-            this.groupBox3.Controls.Add(this.engine);
-            this.groupBox3.Controls.Add(this.maxtreesize);
-            this.groupBox3.Controls.Add(this.threads);
+            this.groupBox3.Controls.Add(this.tableLayoutPanel1);
             this.groupBox3.Cursor = System.Windows.Forms.Cursors.Default;
             resources.ApplyResources(this.groupBox3, "groupBox3");
             this.groupBox3.ForeColor = System.Drawing.Color.White;
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.TabStop = false;
             // 
-            // checkDB
+            // tableLayoutPanel1
             // 
-            this.checkDB.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.checkDB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            resources.ApplyResources(this.checkDB, "checkDB");
-            this.checkDB.FormattingEnabled = true;
-            this.checkDB.Items.AddRange(new object[] {
-            resources.GetString("checkDB.Items"),
-            resources.GetString("checkDB.Items1")});
-            this.checkDB.Name = "checkDB";
+            resources.ApplyResources(this.tableLayoutPanel1, "tableLayoutPanel1");
+            this.tableLayoutPanel1.Controls.Add(this.engine, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label12, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label14, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.label15, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.label13, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.threads, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.maxtreesize, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.checkDB, 1, 3);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             // 
-            // label12
+            // gamenotes
             // 
-            resources.ApplyResources(this.label12, "label12");
-            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(75)))), ((int)(((byte)(144)))));
-            this.label12.Name = "label12";
+            resources.ApplyResources(this.gamenotes, "gamenotes");
+            this.gamenotes.Name = "gamenotes";
             // 
-            // label15
+            // label11
             // 
-            resources.ApplyResources(this.label15, "label15");
-            this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(75)))), ((int)(((byte)(144)))));
-            this.label15.Name = "label15";
-            // 
-            // label13
-            // 
-            resources.ApplyResources(this.label13, "label13");
-            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(75)))), ((int)(((byte)(144)))));
-            this.label13.Name = "label13";
-            // 
-            // label14
-            // 
-            resources.ApplyResources(this.label14, "label14");
-            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(75)))), ((int)(((byte)(144)))));
-            this.label14.Name = "label14";
+            resources.ApplyResources(this.label11, "label11");
+            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(75)))), ((int)(((byte)(144)))));
+            this.label11.Name = "label11";
             // 
             // engine
             // 
             this.engine.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.engine.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             resources.ApplyResources(this.engine, "engine");
+            this.engine.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.engine.FormattingEnabled = true;
             this.engine.Items.AddRange(new object[] {
             resources.GetString("engine.Items"),
@@ -205,8 +195,38 @@
             this.engine.Name = "engine";
             this.engine.SelectedIndexChanged += new System.EventHandler(this.EngineSelectedIndexChanged);
             // 
+            // label12
+            // 
+            resources.ApplyResources(this.label12, "label12");
+            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(75)))), ((int)(((byte)(144)))));
+            this.label12.Name = "label12";
+            // 
+            // checkDB
+            // 
+            this.checkDB.Cursor = System.Windows.Forms.Cursors.Hand;
+            resources.ApplyResources(this.checkDB, "checkDB");
+            this.checkDB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.checkDB.FormattingEnabled = true;
+            this.checkDB.Items.AddRange(new object[] {
+            resources.GetString("checkDB.Items"),
+            resources.GetString("checkDB.Items1")});
+            this.checkDB.Name = "checkDB";
+            // 
+            // label13
+            // 
+            resources.ApplyResources(this.label13, "label13");
+            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(75)))), ((int)(((byte)(144)))));
+            this.label13.Name = "label13";
+            // 
+            // label15
+            // 
+            resources.ApplyResources(this.label15, "label15");
+            this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(75)))), ((int)(((byte)(144)))));
+            this.label15.Name = "label15";
+            // 
             // maxtreesize
             // 
+            resources.ApplyResources(this.maxtreesize, "maxtreesize");
             this.maxtreesize.FormattingEnabled = true;
             this.maxtreesize.Items.AddRange(new object[] {
             resources.GetString("maxtreesize.Items"),
@@ -214,11 +234,11 @@
             resources.GetString("maxtreesize.Items2"),
             resources.GetString("maxtreesize.Items3"),
             resources.GetString("maxtreesize.Items4")});
-            resources.ApplyResources(this.maxtreesize, "maxtreesize");
             this.maxtreesize.Name = "maxtreesize";
             // 
             // threads
             // 
+            resources.ApplyResources(this.threads, "threads");
             this.threads.FormattingEnabled = true;
             this.threads.Items.AddRange(new object[] {
             resources.GetString("threads.Items"),
@@ -229,45 +249,46 @@
             resources.GetString("threads.Items5"),
             resources.GetString("threads.Items6"),
             resources.GetString("threads.Items7")});
-            resources.ApplyResources(this.threads, "threads");
             this.threads.Name = "threads";
+            // 
+            // label14
+            // 
+            resources.ApplyResources(this.label14, "label14");
+            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(75)))), ((int)(((byte)(144)))));
+            this.label14.Name = "label14";
             // 
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(205)))), ((int)(((byte)(0)))));
-            this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.periods);
-            this.groupBox2.Controls.Add(this.rules);
-            this.groupBox2.Controls.Add(this.byuomytime);
-            this.groupBox2.Controls.Add(this.boardsize);
-            this.groupBox2.Controls.Add(this.maintime);
-            this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.label10);
+            this.groupBox2.Controls.Add(this.tableLayoutPanel3);
             this.groupBox2.Cursor = System.Windows.Forms.Cursors.Default;
             resources.ApplyResources(this.groupBox2, "groupBox2");
             this.groupBox2.ForeColor = System.Drawing.Color.White;
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.TabStop = false;
             // 
-            // label6
+            // tableLayoutPanel3
             // 
-            resources.ApplyResources(this.label6, "label6");
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(75)))), ((int)(((byte)(144)))));
-            this.label6.Name = "label6";
+            resources.ApplyResources(this.tableLayoutPanel3, "tableLayoutPanel3");
+            this.tableLayoutPanel3.Controls.Add(this.label11, 0, 5);
+            this.tableLayoutPanel3.Controls.Add(this.gamenotes, 1, 5);
+            this.tableLayoutPanel3.Controls.Add(this.label10, 0, 4);
+            this.tableLayoutPanel3.Controls.Add(this.periods, 1, 4);
+            this.tableLayoutPanel3.Controls.Add(this.rules, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.byuomytime, 1, 3);
+            this.tableLayoutPanel3.Controls.Add(this.label8, 0, 2);
+            this.tableLayoutPanel3.Controls.Add(this.label7, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.label9, 0, 3);
+            this.tableLayoutPanel3.Controls.Add(this.label6, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.boardsize, 1, 1);
+            this.tableLayoutPanel3.Controls.Add(this.maintime, 1, 2);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             // 
-            // label7
+            // label10
             // 
-            resources.ApplyResources(this.label7, "label7");
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(75)))), ((int)(((byte)(144)))));
-            this.label7.Name = "label7";
-            // 
-            // label8
-            // 
-            resources.ApplyResources(this.label8, "label8");
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(75)))), ((int)(((byte)(144)))));
-            this.label8.Name = "label8";
+            resources.ApplyResources(this.label10, "label10");
+            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(75)))), ((int)(((byte)(144)))));
+            this.label10.Name = "label10";
             // 
             // periods
             // 
@@ -293,11 +314,11 @@
             // 
             this.rules.Cursor = System.Windows.Forms.Cursors.Hand;
             this.rules.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            resources.ApplyResources(this.rules, "rules");
             this.rules.FormattingEnabled = true;
             this.rules.Items.AddRange(new object[] {
             resources.GetString("rules.Items"),
             resources.GetString("rules.Items1")});
-            resources.ApplyResources(this.rules, "rules");
             this.rules.Name = "rules";
             // 
             // byuomytime
@@ -320,10 +341,35 @@
             0,
             0});
             // 
+            // label8
+            // 
+            resources.ApplyResources(this.label8, "label8");
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(75)))), ((int)(((byte)(144)))));
+            this.label8.Name = "label8";
+            // 
+            // label7
+            // 
+            resources.ApplyResources(this.label7, "label7");
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(75)))), ((int)(((byte)(144)))));
+            this.label7.Name = "label7";
+            // 
+            // label9
+            // 
+            resources.ApplyResources(this.label9, "label9");
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(75)))), ((int)(((byte)(144)))));
+            this.label9.Name = "label9";
+            // 
+            // label6
+            // 
+            resources.ApplyResources(this.label6, "label6");
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(75)))), ((int)(((byte)(144)))));
+            this.label6.Name = "label6";
+            // 
             // boardsize
             // 
             this.boardsize.Cursor = System.Windows.Forms.Cursors.Hand;
             this.boardsize.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            resources.ApplyResources(this.boardsize, "boardsize");
             this.boardsize.FormattingEnabled = true;
             this.boardsize.Items.AddRange(new object[] {
             resources.GetString("boardsize.Items"),
@@ -333,7 +379,6 @@
             resources.GetString("boardsize.Items4"),
             resources.GetString("boardsize.Items5"),
             resources.GetString("boardsize.Items6")});
-            resources.ApplyResources(this.boardsize, "boardsize");
             this.boardsize.Name = "boardsize";
             // 
             // maintime
@@ -356,27 +401,10 @@
             0,
             0});
             // 
-            // label9
-            // 
-            resources.ApplyResources(this.label9, "label9");
-            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(75)))), ((int)(((byte)(144)))));
-            this.label9.Name = "label9";
-            // 
-            // label10
-            // 
-            resources.ApplyResources(this.label10, "label10");
-            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(75)))), ((int)(((byte)(144)))));
-            this.label10.Name = "label10";
-            // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(205)))), ((int)(((byte)(0)))));
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.nickname);
-            this.groupBox1.Controls.Add(this.psw);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.room);
-            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.tableLayoutPanel2);
             this.groupBox1.Cursor = System.Windows.Forms.Cursors.Default;
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             resources.ApplyResources(this.groupBox1, "groupBox1");
@@ -384,22 +412,27 @@
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
             // 
-            // label2
+            // tableLayoutPanel2
             // 
-            resources.ApplyResources(this.label2, "label2");
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(75)))), ((int)(((byte)(144)))));
-            this.label2.Name = "label2";
+            resources.ApplyResources(this.tableLayoutPanel2, "tableLayoutPanel2");
+            this.tableLayoutPanel2.Controls.Add(this.label4, 0, 2);
+            this.tableLayoutPanel2.Controls.Add(this.room, 1, 2);
+            this.tableLayoutPanel2.Controls.Add(this.label3, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.psw, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.nickname, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.label2, 0, 0);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             // 
-            // nickname
+            // label4
             // 
-            resources.ApplyResources(this.nickname, "nickname");
-            this.nickname.Name = "nickname";
+            resources.ApplyResources(this.label4, "label4");
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(75)))), ((int)(((byte)(144)))));
+            this.label4.Name = "label4";
             // 
-            // psw
+            // room
             // 
-            resources.ApplyResources(this.psw, "psw");
-            this.psw.Name = "psw";
+            resources.ApplyResources(this.room, "room");
+            this.room.Name = "room";
             // 
             // label3
             // 
@@ -407,16 +440,22 @@
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(75)))), ((int)(((byte)(144)))));
             this.label3.Name = "label3";
             // 
-            // room
+            // psw
             // 
-            resources.ApplyResources(this.room, "room");
-            this.room.Name = "room";
+            resources.ApplyResources(this.psw, "psw");
+            this.psw.Name = "psw";
             // 
-            // label4
+            // nickname
             // 
-            resources.ApplyResources(this.label4, "label4");
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(75)))), ((int)(((byte)(144)))));
-            this.label4.Name = "label4";
+            resources.ApplyResources(this.nickname, "nickname");
+            this.nickname.Name = "nickname";
+            // 
+            // label2
+            // 
+            resources.ApplyResources(this.label2, "label2");
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(75)))), ((int)(((byte)(144)))));
+            this.label2.Name = "label2";
             // 
             // label16
             // 
@@ -560,14 +599,17 @@
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.periods)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.byuomytime)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.maintime)).EndInit();
             this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.greenPic)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.redPic)).EndInit();
             this.ResumeLayout(false);
@@ -620,6 +662,11 @@
         private System.Windows.Forms.CheckBox closeChBox;
         public System.Windows.Forms.RichTextBox richTBConsole;
         public System.Windows.Forms.ComboBox checkDB;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox gamenotes;
     }
 }
 
