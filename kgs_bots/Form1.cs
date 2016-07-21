@@ -269,9 +269,9 @@ namespace kgs_bots {
             label5.Visible = false;
             SettingsBtn.Enabled = false;
 
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < 4; i++)
             {
-                TextBox[] txtBox = new TextBox[] { nickname, psw, room };
+                TextBox[] txtBox = new TextBox[] { nickname, psw, room, gamenotes };
                 txtBox[i].Enabled = false;
             }
 
@@ -388,8 +388,8 @@ namespace kgs_bots {
                 SettingsBtn.Enabled = true;
                 label5.Visible = true;
 
-                for (int i = 0; i < 3; i++) {
-                    TextBox[] txtBox = new TextBox[] { nickname, psw, room };
+                for (int i = 0; i < 4; i++) {
+                    TextBox[] txtBox = new TextBox[] { nickname, psw, room, gamenotes };
                     txtBox[i].Enabled = true;
                 }
 
